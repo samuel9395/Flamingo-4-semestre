@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Coroa do circulo</title>
+</head>
+<body>
+
+    <audio autoplay="play" loop>
+        <source src="./../audio/tiroteio.mp3" type="audio/mp3">
+    </audio>
+
+    <style>
+        body {
+            background-image: url('../image/cenas-de-guerra-crueis-pintura-digital.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+<div class="container">
+
+    <a href="../index.html" class="btnMenu" style="margin-left: -5px;"><span class="material-symbols-outlined">
+        arrow_back
+        </span></a>
+        
+    <div class="py-5 text-center">
+        <h2>Calculando a área do circulo</h2>
+    </div>
+
+    <p class="lead">Abaixo vamos calcular a área da coroa circulo utilizando a fórmula:<code> A = π x (r²-r¹).</code></p>
+    <p>A constante π(pi) tem o valor aproximado de 3.14159</p>
+        
+    <form method="post" class="circulo-input">
+        <label for="raio" class="form-label">Digite o raio externo da coroa: </label>
+        <input type="text" class="input-raioInterno" id="raioInterno" name="raio" placeholder="" value="" required=""><br>
+        <label for="raio" class="form-label">Digite o raio interno da coroa: </label>
+        <input type="text" class="input-raioExterno" id="raioExterno" name="raio" placeholder="" value="" required=""><br>
+        <div>
+            <input type="submit" class="btn" id="btnCalc" value="Calcular">
+        </div>
+    </form>
+        <div class="box-resultado">
+            <h5>Resultado:</h5>
+            <p id="resultado">0</p>
+        </div>
+
+        <p class="circulo"></p>
+
+</div>
+
+<script src="../assets/script.js"></script>
+
+
+</body>
+</html>

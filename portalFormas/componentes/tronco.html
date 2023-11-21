@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Tronco da pirâmide</title>
+</head>
+<body>
+
+    <audio autoplay="play" loop>
+        <source src="./../audio/tiroteio.mp3" type="audio/mp3">
+    </audio>
+
+    <style>
+        body {
+            background-image: url('../image/cenas-de-guerra-crueis-pintura-digital.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+<div class="container">
+
+    <a href="../index.html" class="btnMenu" style="margin-left: -5px;"><span class="material-symbols-outlined">
+        arrow_back
+        </span></a>
+        
+    <div class="py-5 text-center">
+        <h2>Calculando a área do Tronco da pirâmide</h2>
+    </div>
+
+    <p class="lead">Abaixo vamos calcular a área total do tronco da pirâmideo utilizando a fórmula:<code> A = areaLateral + area da base menor + area da base maior</code></p>
+        
+    <form method="post" class="circulo-input">
+        <label for="perimetroBaseMenor">Perímetro da Base Menor:</label>
+        <input type="text" class="input-Bm" id="raio" name="raio" placeholder="" value="" required=""><br>
+        <label for="perimetroBaseMaior">Perímetro da Base Maior:</label>
+        <input type="text" class="input-BM" id="raio" name="raio" placeholder="" value="" required=""><br>
+        <label for="alturaLateral">Altura Lateral:</label>
+        <input type="text" class="input-lateral" id="raio" name="raio" placeholder="" value="" required=""><br>
+        <label for="areaBaseMenor">Área da Base Menor:</label>
+        <input type="text" class="input-Am" id="raio" name="raio" placeholder="" value="" required=""><br>
+        <label for="areaBaseMaior">Área da Base Maior:</label>
+        <input type="text" class="input-AM" id="raio" name="raio" placeholder="" value="" required=""><br>
+        <div>
+            <input type="submit" class="btn" id="btnCalc" value="Calcular">
+        </div>
+    </form>
+        <div class="box-resultado">
+            <h5>Resultado:</h5>
+            <p id="resultado">0</p>
+        </div>
+
+        <p class="piramide"></p>
+
+</div>
+
+<script src="../assets/script.js"></script>
+
+
+</body>
+</html>

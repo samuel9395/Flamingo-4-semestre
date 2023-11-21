@@ -1,0 +1,63 @@
+
+.home {
+    background:#757575;
+    border: 1px solid  #757575;
+    width: 711px;
+    height: 350px;
+    position: relative;
+}
+
+.logo {
+    background: white;
+    border-style: solid;
+    border-color: #757575;
+    align-items: center;
+    border-width: 1px;
+    width: 711px;
+    height: 73px;
+}
+
+.main h1{
+    color: #757575;
+    text-align: center;
+    font: 700 18px "Arial", sans-serif;
+}
+
+.menu .cadastro {
+    width: 150px;
+    height: 150px;
+    background-color: aliceblue;
+    font: 600 18px "Arial", sans-serif;
+    color: #757575;
+    margin-left: 50px;
+    display: flex;
+    float: left;
+    flex-direction: column;
+}
+
+h3 {
+    color: #757575;
+    font: 700 18px "Arial", sans-serif;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+li {
+    width: 100%;
+    color: #757575;
+    font: 700 18px "Arial", sans-serif;
+    margin-top: 1px;
+    margin-left: 1px;
+}
+
+.menu .consulta {
+    width: 150px;
+    height: 150px;
+    background-color: aliceblue;
+    font: 600 18px "Arial", sans-serif;
+    color: #757575;
+    margin-right: 50px;
+    display: flex;
+    float: right;
+    flex-direction: column;
+}

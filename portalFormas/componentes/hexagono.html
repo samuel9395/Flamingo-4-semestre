@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Circulo</title>
+</head>
+<body>
+
+    <audio autoplay="play" loop>
+        <source src="./../audio/tiroteio.mp3" type="audio/mp3">
+    </audio>
+
+    <style>
+        body {
+            background-image: url('../image/cenas-de-guerra-crueis-pintura-digital.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+<div class="container">
+
+    <a href="../index.html" class="btnMenu" style="margin-left: -5px;"><span class="material-symbols-outlined">
+        arrow_back
+        </span></a>
+        
+    <div class="py-5 text-center">
+        <h2>Calculando a área do Hexágono Regular</h2>
+    </div>
+
+    <p class="lead">A área do hexágono (A) é calculada multiplicando o comprimento de um lado (L) pelo resultado de uma expressão matemática.</p>
+        
+    <form method="post" class="circulo-input">
+        <label for="hexagono" class="form-label">Digite o comprimento do lado do hexágono: </label>
+        <input type="text" class="input-hexa" id="comprimentoLado" name="comprimentoLado" placeholder="" value="" required=""><br>
+        <div>
+            <input type="submit" class="btn" id="btnCalc" value="Calcular">
+        </div>
+    </form>
+        <div class="box-resultado">
+            <h5>Resultado:</h5>
+            <p id="resultado">0</p>
+        </div>
+
+        <p class="circulo"></p>
+
+</div>
+
+<script src="../assets/script.js"></script>
+
+
+</body>
+</html>

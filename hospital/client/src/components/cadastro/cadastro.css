@@ -1,0 +1,92 @@
+.register,
+.register {
+    box-sizing: border-box;
+}
+
+.register {
+    background: #c95656;
+    border-color: #c95656;
+    border-width: 0.2px;
+    width: 711px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cadastrar {
+    color: black;
+    background-color: #fffefe;
+    text-align: center;
+    font: 400 14px "Arial", sans-serif;
+    position: relative;
+    top: 30px;
+    margin-left: 20px;
+    padding: 7px;
+}
+  
+.lineCadastro input {
+    color: black;
+    text-align: justify;
+    font: 400 14px "Arial", sans-serif;
+    position: relative;
+    top: 80px;
+    width: 110px;
+    justify-content: baseline;
+    margin-left: 20px;
+    display: flexbox;
+    margin-top: 7px;
+}
+
+.lineCadastro .nome {
+    width: 400px;
+} 
+
+.lineCadastro .data {
+    width: 100px;
+}
+
+.lineCadastro .crm{
+    width: 100px;
+}
+
+.lineCadastro .cip{
+    width: 100px;
+}
+
+.lineCadastro .end {
+    width: 400px;
+  }
+
+  
+.lineCadastro .cpf {
+    width: 97px;
+}
+
+.lineCadastro .rg{
+    width: 100px;
+}
+
+.lineCadastro .email {
+    width: 400px;
+}
+
+.lineCadastro .especialidade {
+    width: 225px;
+}
+
+.lineCadastro .tel1 {
+    width: 150px;
+}
+
+.lineCadastro .tel2 {
+    width: 150px;
+}
+
+.btn {
+    position: relative;
+    top: 109px;
+    width: 70px;
+    height: 30px;
+    justify-content: baseline;
+    margin-left: 20px;
+}

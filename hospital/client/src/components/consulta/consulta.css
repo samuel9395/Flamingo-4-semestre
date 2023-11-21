@@ -1,0 +1,51 @@
+.register {
+    box-sizing: border-box;
+}
+
+.return {
+    box-sizing: border-box;
+    background: #757575;
+    border-color: #757575;
+    border-width: 0.2px;
+    width: 711px;
+    height: 400px;
+    padding: 0;
+}
+
+h1 {
+    width: 211px;
+    color: #757575;
+    background-color: #fffefe;
+    text-align: center;
+    font: 800 10px "Arial", sans-serif;
+    font-size: medium;
+    position: static;
+    top: 30px;
+    padding: 7px;
+    margin-left: 6px;
+}
+
+.consulta {
+    margin-left: 1%;
+    margin-inline-end: 5px;
+    box-sizing: border-box;
+    width: 697px;
+    height: 220px;
+    padding: 7px 0px;
+    background-color: #fffefe;
+}
+
+
+.consulta h5 {
+    margin-left: -20px;
+    font: 800 18px "Arial", sans-serif;
+    font-size: smaller;
+}
+
+.return .btn {
+    top: 10px;
+    width: 70px;
+    height: 30px;
+    justify-content: baseline;
+    margin-left: 05px;
+}

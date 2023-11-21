@@ -1,0 +1,33 @@
+.logo,
+.logo * {
+    box-sizing: border-box;
+}
+
+
+.logo {
+    background: white;
+    border-style: solid;
+    border-color: #757575;
+    align-items: center;
+    border-width: 1px;
+    padding: 14px 116px 14px 116px;
+    display: flex;
+    flex-direction: row;
+    gap: 135px;
+    justify-content: center;
+    width: 711px;
+    height: 73px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main {
+    color: #757575;
+    text-align: center;
+    font: 400 14px "Arial", sans-serif;
+}
+
+.img{
+    flex-shrink: 0;
+    overflow: visible;
+}
