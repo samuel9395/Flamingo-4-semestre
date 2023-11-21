@@ -1,0 +1,303 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 21/11/2023 às 20:26
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `hospital_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `convenio`
+--
+
+CREATE TABLE `convenio` (
+  `id_convenio` int(11) NOT NULL,
+  `nome_convenio` varchar(30) DEFAULT NULL,
+  `cnpj_convenio` int(14) DEFAULT NULL,
+  `carencia_convenio` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `enfermeiro`
+--
+
+CREATE TABLE `enfermeiro` (
+  `id_enfermeiro` int(11) NOT NULL,
+  `nome_enfermeiro` varchar(30) DEFAULT NULL,
+  `cpf_enfermeiro` decimal(11,3) DEFAULT NULL,
+  `cre_enfermeiro` decimal(5,0) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `especialidade`
+--
+
+CREATE TABLE `especialidade` (
+  `id_especialidade` int(11) NOT NULL,
+  `especialidade` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `especialidade`
+--
+
+INSERT INTO `especialidade` (`id_especialidade`, `especialidade`) VALUES
+(1, 'Cirurgião'),
+(2, 'Nutricionista'),
+(24, 'Clínico-Geral');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `internacao`
+--
+
+CREATE TABLE `internacao` (
+  `id_internacao` int(11) NOT NULL,
+  `dataEntrada_internacao` datetime DEFAULT NULL,
+  `dataPrevAlta_internacao` datetime DEFAULT NULL,
+  `dataAlta_internacao` datetime DEFAULT NULL,
+  `procedimentos_internacao` varchar(30) DEFAULT NULL,
+  `tipo_internacao` int(11) DEFAULT NULL,
+  `numero_quarto_internacao` int(11) DEFAULT NULL,
+  `medico_internacao` int(11) DEFAULT NULL,
+  `enfermeiro_internacao` int(11) DEFAULT NULL,
+  `paciente_internacao` int(11) DEFAULT NULL,
+  `quarto_internacao` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `medico`
+--
+
+CREATE TABLE `medico` (
+  `id_medico` int(11) NOT NULL,
+  `nome_medico` varchar(50) DEFAULT NULL,
+  `cpf_medico` varchar(11) DEFAULT NULL,
+  `rg_medico` varchar(9) DEFAULT NULL,
+  `crm_medico` varchar(6) DEFAULT NULL,
+  `tel_medico` varchar(15) DEFAULT NULL,
+  `email_medico` varchar(30) DEFAULT NULL,
+  `endereco_medico` varchar(30) DEFAULT NULL,
+  `especialidade_medico` varchar(50) DEFAULT NULL,
+  `data_medico` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `medico`
+--
+
+INSERT INTO `medico` (`id_medico`, `nome_medico`, `cpf_medico`, `rg_medico`, `crm_medico`, `tel_medico`, `email_medico`, `endereco_medico`, `especialidade_medico`, `data_medico`) VALUES
+(1, 'Samuel Barreto Bitencourt de Freitas', '42291902806', '559836545', '250619', '(11) 9 69815962', 'samuelb2f@outlook.com', 'Rua Cazuza, n°101', 'Cirurgião', '1993-08-25'),
+(2, 'Suzana Barreto Bitencourt de Freitas', '42291902806', '665498751', '191197', '(11) 9 69815962', 'suzab2f@outlook.com', 'Rua Cazuza, n°101', 'Nutricionista', '1997-11-19'),
+(39, 'Janice Barreto De Freitas', '42291902806', '778521548', '070367', '(11) 9 69815962', 'janice.barreto@outlook.com', 'Rua Cazuza, n°101', 'Clínico-Geral', '1967-03-07');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `paciente`
+--
+
+CREATE TABLE `paciente` (
+  `id_paciente` int(11) NOT NULL,
+  `nome_paciente` varchar(30) DEFAULT NULL,
+  `cpf_paciente` decimal(11,3) DEFAULT NULL,
+  `rg_paciente` int(9) DEFAULT NULL,
+  `dataNascimento_paciente` date DEFAULT NULL,
+  `endereco_paciente` varchar(30) DEFAULT NULL,
+  `tel_paciente` decimal(9,0) DEFAULT NULL,
+  `email_paciente` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `quarto`
+--
+
+CREATE TABLE `quarto` (
+  `id_quarto` int(11) NOT NULL,
+  `numero_quarto` decimal(10,2) DEFAULT NULL,
+  `valorDiaria_quarto` int(11) DEFAULT NULL,
+  `tipo_quarto` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tipoquarto`
+--
+
+CREATE TABLE `tipoquarto` (
+  `id_tipoQuarto` int(11) NOT NULL,
+  `quartoDescricao_tipoQuarto` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tipoquarto`
+--
+
+INSERT INTO `tipoquarto` (`id_tipoQuarto`, `quartoDescricao_tipoQuarto`) VALUES
+(1, 'Apartamento'),
+(2, 'Enfermaria'),
+(3, 'Duplex');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `convenio`
+--
+ALTER TABLE `convenio`
+  ADD PRIMARY KEY (`id_convenio`);
+
+--
+-- Índices de tabela `enfermeiro`
+--
+ALTER TABLE `enfermeiro`
+  ADD PRIMARY KEY (`id_enfermeiro`);
+
+--
+-- Índices de tabela `especialidade`
+--
+ALTER TABLE `especialidade`
+  ADD PRIMARY KEY (`id_especialidade`);
+
+--
+-- Índices de tabela `internacao`
+--
+ALTER TABLE `internacao`
+  ADD PRIMARY KEY (`id_internacao`),
+  ADD KEY `tipo_internacao` (`tipo_internacao`),
+  ADD KEY `quarto_internacao` (`quarto_internacao`),
+  ADD KEY `numero_quarto_internacao` (`numero_quarto_internacao`),
+  ADD KEY `medico_internacao` (`medico_internacao`),
+  ADD KEY `enfermeiro_internacao` (`enfermeiro_internacao`),
+  ADD KEY `paciente_internacao` (`paciente_internacao`);
+
+--
+-- Índices de tabela `medico`
+--
+ALTER TABLE `medico`
+  ADD PRIMARY KEY (`id_medico`);
+
+--
+-- Índices de tabela `paciente`
+--
+ALTER TABLE `paciente`
+  ADD PRIMARY KEY (`id_paciente`);
+
+--
+-- Índices de tabela `quarto`
+--
+ALTER TABLE `quarto`
+  ADD PRIMARY KEY (`id_quarto`),
+  ADD KEY `tipo_quarto` (`tipo_quarto`);
+
+--
+-- Índices de tabela `tipoquarto`
+--
+ALTER TABLE `tipoquarto`
+  ADD PRIMARY KEY (`id_tipoQuarto`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `convenio`
+--
+ALTER TABLE `convenio`
+  MODIFY `id_convenio` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `enfermeiro`
+--
+ALTER TABLE `enfermeiro`
+  MODIFY `id_enfermeiro` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `especialidade`
+--
+ALTER TABLE `especialidade`
+  MODIFY `id_especialidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT de tabela `internacao`
+--
+ALTER TABLE `internacao`
+  MODIFY `id_internacao` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `medico`
+--
+ALTER TABLE `medico`
+  MODIFY `id_medico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT de tabela `paciente`
+--
+ALTER TABLE `paciente`
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `quarto`
+--
+ALTER TABLE `quarto`
+  MODIFY `id_quarto` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `tipoquarto`
+--
+ALTER TABLE `tipoquarto`
+  MODIFY `id_tipoQuarto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `internacao`
+--
+ALTER TABLE `internacao`
+  ADD CONSTRAINT `internacao_ibfk_1` FOREIGN KEY (`tipo_internacao`) REFERENCES `tipoquarto` (`id_tipoQuarto`),
+  ADD CONSTRAINT `internacao_ibfk_2` FOREIGN KEY (`quarto_internacao`) REFERENCES `quarto` (`id_quarto`),
+  ADD CONSTRAINT `internacao_ibfk_3` FOREIGN KEY (`numero_quarto_internacao`) REFERENCES `quarto` (`id_quarto`),
+  ADD CONSTRAINT `internacao_ibfk_4` FOREIGN KEY (`medico_internacao`) REFERENCES `medico` (`id_medico`),
+  ADD CONSTRAINT `internacao_ibfk_5` FOREIGN KEY (`enfermeiro_internacao`) REFERENCES `enfermeiro` (`id_enfermeiro`),
+  ADD CONSTRAINT `internacao_ibfk_6` FOREIGN KEY (`paciente_internacao`) REFERENCES `paciente` (`id_paciente`);
+
+--
+-- Restrições para tabelas `quarto`
+--
+ALTER TABLE `quarto`
+  ADD CONSTRAINT `quarto_ibfk_1` FOREIGN KEY (`tipo_quarto`) REFERENCES `tipoquarto` (`id_tipoQuarto`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
